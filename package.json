@@ -1,5 +1,5 @@
 {
-  "name": "outbound-gym-x-elevenlabs",
+  "name": "retention-router",
   "version": "0.1.0",
   "private": true,
   "scripts": {

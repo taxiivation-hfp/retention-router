@@ -429,7 +429,7 @@ export const cancellationGuards: Guard[] = [
       "to the real lines the first run produced: the Goal's own \"check in before it goes ahead\", which the obstruction pattern " +
       "wrongly flagged; \"it still costs five dollars a week\", a configured fee that is not an invented price; the ladder line " +
       "\"If a pause doesn't help, we also have an off-peak membership…\" that is the defect; and a transcript the platform cut off " +
-      "on the member's turn, which is inconclusive rather than a failure. Each correction matches PASS_TWO.md's wording.",
+      "on the member's turn, which is inconclusive rather than a failure. Each correction matches the pass-two plan's wording.",
     run: () => {
       const problems: string[] = [];
       const cases: Array<[keyof typeof PATTERNS, string, boolean]> = [

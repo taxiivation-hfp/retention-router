@@ -325,7 +325,7 @@ function leakSummary(runs: RunFile[]): EvalsData["leak"] {
   };
 }
 
-/** The scenario the ladder failure was found in, and the other three that test the same stop rule (PASS_TWO_REPORT.md, addendum §4). */
+/** The scenario the ladder failure was found in, and the other three that test the same stop rule (the pass-two run files). */
 const LADDER_SCENARIO = "cancellation-ladder-stops-on-refusal";
 const LADDER_SCENARIOS = [
   LADDER_SCENARIO,

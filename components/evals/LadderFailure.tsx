@@ -5,7 +5,7 @@ import { Badge, Section } from "@/components/evals/ui";
  * The cancellation agent's ladder: a second offer after a flat "no thanks", in
  * the first run, and the same scenario after the stop rule was inverted. Both
  * transcripts and the four-scenario count are read from the run files; the
- * diagnosis and the rule are PASS_TWO_REPORT.md's words.
+ * diagnosis and the rule are docs/DESIGN_NOTES.md's words.
  */
 export default function LadderFailure({ ladder }: { ladder: EvalsData["ladder"] }) {
   const { before, after, scenarios } = ladder;

@@ -3,7 +3,7 @@
  *
  * Which scenarios did not pass is never taken from here: the "Still broken"
  * list is the latest run's own non-passes, and an entry below only says whose
- * problem one of them is. The readings are PASS_TWO_REPORT.md's addendum,
+ * problem one of them is. The readings were written against the run files,
  * section 4 ("The second live run"), which went through each transcript. A
  * non-pass with no entry here shows as not yet attributed rather than being
  * given an owner nobody checked; an entry for a scenario that now passes is
@@ -37,7 +37,7 @@ export const ATTRIBUTION: Record<string, { owner: Owner; reading: string }> = {
   },
 };
 
-export const ATTRIBUTION_SOURCE = "docs/build-log/PASS_TWO_REPORT.md, addendum §4";
+export const ATTRIBUTION_SOURCE = "a reading of each failing transcript in evals/results/2026-09-13T19-19-24-069Z.json";
 
 /**
  * A call that passed every check while leaking. Not a row of the latest run,
@@ -64,5 +64,5 @@ export const UNTESTED_RISK = {
   title: "A real member who says “no thanks… well, what else have you got?”",
   reading:
     "Two runs of the ladder scenarios is evidence, not proof, and there is no transcript of that yet. Listen to the first real cancellation call.",
-  source: "docs/build-log/PASS_TWO_REPORT.md, “The riskiest thing left, revised”",
+  source: "evals/README.md, “Known limits of this suite”",
 };

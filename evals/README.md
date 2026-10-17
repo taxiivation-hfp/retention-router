@@ -56,7 +56,7 @@ safety model for gym setup:
 - a synthetic number is never dialled, while an uploaded one needs the opt-in;
 - the nightly recompute refuses real members on the frozen clock.
 
-**Pass-one guards** — 20, added with `PASS_ONE.md` (details in `docs/build-log/PASS_ONE_REPORT.md`):
+**Pass-one guards** — 20, added with the business-side features (gym health, offer schedules, the "something else" offer, editing a gym):
 - `healthGuards.tsx` (6): the gym-health numbers against a hand count, segments
   cut at the router's thresholds, the check-in summary against the raw CSV, the
   intelligence page rendered with no calls and with too few reasons, theme
@@ -76,7 +76,7 @@ safety model for gym setup:
   and the CSV column is optional.
 
 **Pass-two guards** — `cancellationGuards.ts` rewritten (10, of which 8 are
-new; details in `docs/build-log/PASS_TWO_REPORT.md`). The pass-one tripwire is replaced by
+new) for the cancellation agent. The pass-one tripwire is replaced by
 `cancellation-flip-is-narrow`: a flagged member is callable on the cancellation
 call and on nothing else, every other auto-renewer is refused exactly as
 before, do-not-contact holds, and a flagged member whose term has ended gets
@@ -188,7 +188,7 @@ every one where it failed, and one re-score. The failures are the useful part.
 | `17-54-47` | 20/20 | **13/15** | assertions pinned to real transcript lines |
 | `17-57-11` | 20/20 | **13/15** | judge conditions narrowed |
 | `17-59-57` | 20/20 | **15/15** | the last run of the three-agent suite |
-| `2026-09-13T11-47-36` | 80/80 | **23/31** | pass two: the cancellation agent's first run. 13/15 on the unchanged agents (judge variance, a platform timeout); 10/16 on the new one, three of the six being a second offer after a refusal — see `PASS_TWO_REPORT.md` |
+| `2026-09-13T11-47-36` | 80/80 | **23/31** | pass two: the cancellation agent's first run. 13/15 on the unchanged agents (judge variance, a platform timeout); 10/16 on the new one, three of the six being a second offer after a refusal |
 | `2026-09-13T12-21-51` | 80/80 | **28/31** (1 inconclusive) | the ladder inverted — offers stop by default after any decline — and three suite errors corrected. 13/15 on the unchanged agents; 15/16 on the cancellation agent, the ladder 4/4, the miss a callback phrasing the pattern doesn't cover |
 | `2026-09-13T19-18-38` | 81/81 | **27/31** (1 inconclusive) | **a re-score, no calls**: run 11's transcripts under the five leak assertions. `winback-moved-away-lets-go` passed while three turns were `<current-active-structured-procedure>` markup, from a procedure attached to the winback agent in the dashboard |
 | `2026-09-13T19-19-24` | 81/81 | **30/31** | the procedure removed and the sync made to clear it. No leak of any shape; the miss is the callback phrasing again |

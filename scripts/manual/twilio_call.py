@@ -11,11 +11,11 @@ An earlier version of this file had the Account SID and auth token hardcoded in
 plaintext and was committed, so they are still in this repository's git history.
 The auth token has since been rotated in the Twilio console, so the one in
 history no longer works. Rewriting history to remove it is still outstanding.
-Credentials now come only from the environment. See REVIEW_NOTES.md.
+Credentials now come only from the environment.
 
 RUN:
   pip install requests python-dotenv
-  python twilio_call.py +61400000000
+  python scripts/manual/twilio_call.py +61400000000
 """
 
 import os

@@ -3,7 +3,7 @@ ElevenLabs outbound agent call. Puts the actual retention agent on the phone.
 
 RUN:
   pip install requests python-dotenv
-  python elevenlabs_call.py
+  python scripts/manual/eleven_labs_call.py
 """
 
 import json
@@ -25,14 +25,15 @@ else:
     sys.exit("No .env.local found. Run this from your project folder.")
  
 API_KEY         = os.getenv("ELEVENLABS_API_KEY")
-AGENT_ID        = os.getenv("ELEVENLABS_AGENT_ID")
+AGENT_ID        = os.getenv("ELEVENLABS_AGENT_ID") or os.getenv("ELEVENLABS_AGENT_ID_RENEWAL")
 PHONE_NUMBER_ID = os.getenv("ELEVENLABS_PHONE_NUMBER_ID")
-TO_NUMBER       = os.getenv("TEST_TO_NUMBER", "+61491749433")  # lando's number rn.
+TO_NUMBER       = os.getenv("TEST_TO_NUMBER") or os.getenv("CALL_OVERRIDE_NUMBER")
  
 missing = [n for n, v in [
     ("ELEVENLABS_API_KEY", API_KEY),
-    ("ELEVENLABS_AGENT_ID", AGENT_ID),
+    ("ELEVENLABS_AGENT_ID or ELEVENLABS_AGENT_ID_RENEWAL", AGENT_ID),
     ("ELEVENLABS_PHONE_NUMBER_ID", PHONE_NUMBER_ID),
+    ("TEST_TO_NUMBER or CALL_OVERRIDE_NUMBER", TO_NUMBER),
 ] if not v]
 if missing:
     sys.exit("Missing from .env.local: " + ", ".join(missing))

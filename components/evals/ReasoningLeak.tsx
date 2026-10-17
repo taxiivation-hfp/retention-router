@@ -3,7 +3,7 @@ import { Badge, Code, Section } from "@/components/evals/ui";
 
 /**
  * The reasoning leak, shown from the committed transcripts it happened in. The
- * frequency and the fix are README.md's words; which run and which scenario, and
+ * frequency and the fix are docs/DESIGN_NOTES.md's words; which run and which scenario, and
  * how the check does in the latest run, are read from the run files.
  *
  * The badge reports the check, not a cure: a call that passed every check while

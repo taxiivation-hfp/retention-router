@@ -1,6 +1,6 @@
 import { Section } from "@/components/evals/ui";
 
-/** The cohort-accuracy number this project removed, and why. README.md's words; nothing here is computed. */
+/** The cohort-accuracy number this project removed, and why. docs/DESIGN_NOTES.md's words; nothing here is computed. */
 export default function WithdrawnNumber() {
   return (
     <Section title="We excluded our 90.4% accuracy metric" lead>
