@@ -2,7 +2,7 @@
 
 ### An outbound CRM voice agent for small-medium gyms. 
 
-🔴 **Live app:** [retention-router.vercel.app](https://retention-router.vercel.app) · 🎥 **Demo video:** [YouTube](https://www.youtube.com/watch?v=naHM8YY6trA)
+🔴 **Live App:** [retention-router.vercel.app](https://retention-router.vercel.app) · 🎥 **Demo Video:** [YouTube](https://www.youtube.com/watch?v=naHM8YY6trA)
 
 ---
 
@@ -84,33 +84,6 @@ Stack: Next.js, TypeScript, Supabase (Postgres), ElevenLabs Conversational AI, T
 | Screens (`app/`, `components/`) | Call queue, Overview, Configuration, Our Journey, About and Members, in light and dark themes. |
 
 The full account of the design, the decisions behind it, the evaluation results and the limitations is in [`docs/DESIGN_NOTES.md`](docs/DESIGN_NOTES.md).
-
-## Running it
-
-```bash
-npm install
-cp .env.example .env.local     # then fill it in
-npm run dev                    # http://localhost:3000
-```
-
-```bash
-npm run agents:sync            # create or update the four ElevenLabs agents
-npm run agents:diff            # compare each agent with what ElevenLabs holds, without writing
-npm run evals                  # the guards + 31 simulated calls
-npm run evals:guards           # the guards alone: no model, no network
-npm run evals:extraction       # the adversarial price list through the real extraction model
-npm run data:build             # regenerate the synthetic dataset
-npm run data:verify-port       # lib/memberData.ts against pipeline/build_scores.py, all 500 members
-npm run db:verify              # every migration against in-process Postgres
-npm run gyms:seed-check        # the gyms migration's seed block matches data/gyms.json
-```
-
-`.env.example` documents every variable. These matter most:
-
-- **`CALL_OVERRIDE_NUMBER`** sends every call and text to one verified number. The 500 member phone numbers are synthetic and belong to nobody. A synthetic member is never dialled without it. Leave it set for any demo.
-- **`DATASET_CLOCK`** set to `live` measures time against today's date. Without it, time is measured from the dataset's frozen reference date. Set `live` for any gym's real member data. Uploaded members are refused without it.
-- **`MEMBER_SOURCE`** picks where members come from. Unset, it is the synthetic dataset. `supabase` with `MEMBER_SOURCE_GYM_ID` reads one gym's uploaded members. `onboarded` reads the members of whichever gym was saved at Configuration.
-- **`ONBOARDING_WRITES`** set to `enabled` allows saving a gym, editing one, importing members and the reset button. Everything else works with it off. Put deployment protection or real auth in front of the app before enabling it, because no route has a login.
 
 ### Sample files
 
