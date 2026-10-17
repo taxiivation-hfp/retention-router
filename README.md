@@ -1,6 +1,6 @@
 # Retention Router
 
-### An outbound CRM voice agent for small-medium gyms. It calls the members worth calling and leaves the rest alone.
+### An outbound CRM voice agent for small-medium gyms. 
 
 🔴 **Live app:** [retention-router.vercel.app](https://retention-router.vercel.app) · 🎥 **Demo video:** [YouTube](https://www.youtube.com/watch?v=naHM8YY6trA)
 
